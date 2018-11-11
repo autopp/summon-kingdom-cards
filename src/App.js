@@ -35,12 +35,12 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <h1>Summon Kingdom Cards</h1>
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <h2>王国カード</h2>
           </div>
         </div>
@@ -121,7 +121,7 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <h2>イベント・ランドマーク</h2>
           </div>
         </div>
@@ -138,6 +138,13 @@ class App extends Component {
           <div className="col-lg-2">
             <input type="number" value={this.state.landmark} min="0" max="10" step="1" onChange={this.onChangeLandmark} />
           </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-12">
+            <h2>サプライ</h2>
+          </div>
+        </div>
+        <div className="row">
         </div>
       </div>
     );
