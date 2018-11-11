@@ -23,12 +23,25 @@ class App extends Component {
     };
   }
 
+  onChangeEvent = e => {
+    this.setState({ event: parseInt(e.target.value, 10) });
+  }
+
+  onChangeLandmark = e => {
+    this.setState({ landmark: parseInt(e.target.value, 10) });
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
             <h1>Summon Kingdom Cards</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-6">
+            <h2>王国カード</h2>
           </div>
         </div>
         <div className="row">
@@ -105,6 +118,25 @@ class App extends Component {
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.kingdom.empires} min="0" max="10" step="1" onChange={this.onChangeKingdom("empires")} />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-6">
+            <h2>イベント・ランドマーク</h2>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-1">
+            <div>イベント:</div>
+          </div>
+          <div className="col-lg-2">
+            <input type="number" value={this.state.event} min="0" max="10" step="1" onChange={this.onChangeEvent} />
+          </div>
+          <div className="col-lg-1">
+            <div>帝国:</div>
+          </div>
+          <div className="col-lg-2">
+            <input type="number" value={this.state.landmark} min="0" max="10" step="1" onChange={this.onChangeLandmark} />
           </div>
         </div>
       </div>
