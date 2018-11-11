@@ -32,6 +32,30 @@ class App extends Component {
   }
 
   render() {
+    let supplies = [
+      {
+        kingdom: {
+          basic: [
+            { name: "役人", bane: false }, { name: "地下貯蔵庫", bane: true },
+            { name: "礼拝堂", bane: true }, { name: "議事堂", bane: false }
+          ],
+          intrigue: [
+            { name: "男爵", bane: false }, { name: "公爵", bane: false },
+            { name: "橋", bane: false }, { name: "共謀者", bane: false },
+            { name: "銅細工師", bane: false }, { name: "中庭", bane: true }
+          ]
+        }
+      }
+    ].map(supply => {
+      let cards = Object.keys(supply.kingdom).map(ex => supply.kingdom[ex].map(card => card.name).join(' ')).join(' ');
+      return (
+        <div class="panel panel-default">
+          <div class="panel-body">
+            {cards}<br/>
+          </div>
+        </div>
+      )
+    })
     return (
       <div className="container">
         <div className="row">
@@ -145,6 +169,7 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
+          {supplies}
         </div>
       </div>
     );
