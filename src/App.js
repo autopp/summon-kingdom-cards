@@ -12,7 +12,24 @@ class App extends Component {
         basic: 0, intrigue: 0, seaside: 0, alchemy: 0, prosperity: 0,
         cornucopia: 0, hinterlands: 0, dark_ages: 0, guild: 0, adventures: 0, empires: 0
       },
-      event: 0, landmark: 0, supplies: []
+      event: 0, landmark: 0, supplies: [
+        {
+          kingdom: {
+            basic: [
+              { name: "役人", bane: false }, { name: "地下貯蔵庫", bane: true },
+              { name: "礼拝堂", bane: true }, { name: "議事堂", bane: false }
+            ],
+            intrigue: [
+              { name: "男爵", bane: false }, { name: "公爵", bane: false },
+              { name: "橋", bane: false }, { name: "共謀者", bane: false },
+            ],
+            cornucopia: [
+              { name: "男爵", bane: false }
+            ]
+          },
+          bane: { name: "手先", bane: true }, events: [{ name: "施し" }], landmarks: [{ name: "水道橋" }]
+        }
+      ]
     };
   }
 
@@ -37,24 +54,7 @@ class App extends Component {
   }
 
   render() {
-    let supplies = [
-      {
-        kingdom: {
-          basic: [
-            { name: "役人", bane: false }, { name: "地下貯蔵庫", bane: true },
-            { name: "礼拝堂", bane: true }, { name: "議事堂", bane: false }
-          ],
-          intrigue: [
-            { name: "男爵", bane: false }, { name: "公爵", bane: false },
-            { name: "橋", bane: false }, { name: "共謀者", bane: false },
-          ],
-          cornucopia: [
-            { name: "男爵", bane: false }
-          ]
-        },
-        bane: { name: "手先", bane: true }, events: [{ name: "施し" }], landmarks: [{ name: "水道橋" }]
-      }
-    ].map(supply => {
+    let supplies = this.state.supplies.map(supply => {
       let cards = Object.keys(supply.kingdom).map(ex => supply.kingdom[ex].map(card => card.name).join(' ')).join(' ');
       let bane = typeof supply.bane === 'object' ? `災い: ${supply.bane.name}` : '';
       let landscapes = supply.events.concat(supply.landmarks).map(card => card.name).join(' ')
