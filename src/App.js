@@ -42,16 +42,22 @@ class App extends Component {
           intrigue: [
             { name: "男爵", bane: false }, { name: "公爵", bane: false },
             { name: "橋", bane: false }, { name: "共謀者", bane: false },
-            { name: "銅細工師", bane: false }, { name: "中庭", bane: true }
+          ],
+          cornucopia: [
+            { name: "男爵", bane: false }
           ]
-        }
+        },
+        // bane: { name: "手先", bane: true }, events: [{ name: "施し" }], landmark: [{ name: "水道橋" }]
       }
     ].map(supply => {
       let cards = Object.keys(supply.kingdom).map(ex => supply.kingdom[ex].map(card => card.name).join(' ')).join(' ');
+      let bane = typeof supply.bane === 'object' ? `災い: ${supply.bane.name}` : '';
+
       return (
         <div class="panel panel-default">
           <div class="panel-body">
-            {cards}<br/>
+            <div>{cards}</div>
+            <div>{bane}</div>
           </div>
         </div>
       )
