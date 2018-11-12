@@ -7,12 +7,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      numberOfSupplies: 0,
       kingdom: {
         basic: 0, intrigue: 0, seaside: 0, alchemy: 0, prosperity: 0,
         cornucopia: 0, hinterlands: 0, dark_ages: 0, guild: 0, adventures: 0, empires: 0
       },
       event: 0, landmark: 0, supplies: []
     };
+  }
+
+  onChangeNumberOfSupplies = e => {
+    this.setState({ numberOfSupplies: parseInt(e.target.value, 10) });
   }
 
   onChangeKingdom = (name) => {
@@ -177,6 +182,17 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
+          <div className="col-lg-1">
+            <div>数:</div>
+          </div>
+          <div className="col-lg-2">
+            <input type="number" value={this.state.numberOfSupplies} min="0" max="10" step="1" onChange={this.onChangeNumberOfSupplies} />
+          </div>
+          <div className="col-lg-2">
+            <button type="button" className="btn btn-info btn">生成</button>
+          </div>
+        </div>
+        <div className="row" id="supplies">
           {supplies}
         </div>
       </div>

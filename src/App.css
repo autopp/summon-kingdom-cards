@@ -30,3 +30,7 @@
     transform: rotate(360deg);
   }
 }
+
+#supplies {
+  margin-top: 10px
+}
