@@ -47,16 +47,18 @@ class App extends Component {
             { name: "男爵", bane: false }
           ]
         },
-        // bane: { name: "手先", bane: true }, events: [{ name: "施し" }], landmark: [{ name: "水道橋" }]
+        bane: { name: "手先", bane: true }, events: [{ name: "施し" }], landmarks: [{ name: "水道橋" }]
       }
     ].map(supply => {
       let cards = Object.keys(supply.kingdom).map(ex => supply.kingdom[ex].map(card => card.name).join(' ')).join(' ');
       let bane = typeof supply.bane === 'object' ? `災い: ${supply.bane.name}` : '';
+      let landscapes = supply.events.concat(supply.landmarks).map(card => card.name).join(' ')
 
       return (
         <div class="panel panel-default">
           <div class="panel-body">
             <div>{cards}</div>
+            <div>{landscapes}</div>
             <div>{bane}</div>
           </div>
         </div>
