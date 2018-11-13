@@ -53,6 +53,14 @@ class App extends Component {
     this.setState({ landmark: parseInt(e.target.value, 10) });
   }
 
+  onClick = _ => {
+    // validate state
+    let kingdom = this.state.kingdom;
+    if (Object.values(kingdom).reduce((acc, x) => acc + x) != 0) {
+      return;
+    }
+  }
+
   render() {
     let supplies = this.state.supplies.map(supply => {
       let cards = Object.keys(supply.kingdom).map(ex => supply.kingdom[ex].map(card => card.name).join(' ')).join(' ');
@@ -189,7 +197,7 @@ class App extends Component {
             <input type="number" value={this.state.numberOfSupplies} min="0" max="10" step="1" onChange={this.onChangeNumberOfSupplies} />
           </div>
           <div className="col-lg-2">
-            <button type="button" className="btn btn-info btn">生成</button>
+            <button type="button" className="btn btn-info btn" onClick={this.onGenerate}>生成</button>
           </div>
         </div>
         <div className="row" id="supplies">
