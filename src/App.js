@@ -29,7 +29,8 @@ class App extends Component {
           },
           bane: { name: "手先", bane: true }, events: [{ name: "施し" }], landmarks: [{ name: "水道橋" }]
         }
-      ]
+      ],
+      errors: ["foo", "bar"]
     };
   }
 
@@ -62,6 +63,13 @@ class App extends Component {
   }
 
   render() {
+    let errors = '';
+    if (this.state.errors.length !== 0) {
+      let messages = this.state.errors.map(error => <div>{error}</div>)
+      errors = <div class="alert alert-danger">
+        {messages}
+      </div>;
+    }
     let supplies = this.state.supplies.map(supply => {
       let cards = Object.keys(supply.kingdom).map(ex => supply.kingdom[ex].map(card => card.name).join(' ')).join(' ');
       let bane = typeof supply.bane === 'object' ? `災い: ${supply.bane.name}` : '';
@@ -201,6 +209,7 @@ class App extends Component {
           </div>
         </div>
         <div className="row" id="supplies">
+          {errors}
           {supplies}
         </div>
       </div>
