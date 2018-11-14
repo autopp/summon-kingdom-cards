@@ -208,9 +208,15 @@ class App extends Component {
             <button type="button" className="btn btn-info btn" onClick={this.onGenerate}>生成</button>
           </div>
         </div>
+        <div className="row" id="errors">
+          <div className="col-lg-12">
+            {errors}
+          </div>
+        </div>
         <div className="row" id="supplies">
-          {errors}
-          {supplies}
+          <div className="col-lg-12">
+            {supplies}
+          </div>
         </div>
       </div>
     );
