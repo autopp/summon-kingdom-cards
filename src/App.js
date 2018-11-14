@@ -54,12 +54,23 @@ class App extends Component {
     this.setState({ landmark: parseInt(e.target.value, 10) });
   }
 
-  onClick = _ => {
+  onGenerate = _ => {
     // validate state
-    let kingdom = this.state.kingdom;
-    if (Object.values(kingdom).reduce((acc, x) => acc + x) != 0) {
+    let errors = this.validateForGenerate();
+    if (errors.length !== 0) {
+      this.setState({errors: errors});
       return;
     }
+  }
+
+  validateForGenerate() {
+    let errors = [];
+    let kingdom = this.state.kingdom;
+    if (Object.values(kingdom).reduce((acc, x) => acc + x) !== 10) {
+      errors.push("王国カードの数が10ではありません");
+    }
+
+    return errors;
   }
 
   render() {
