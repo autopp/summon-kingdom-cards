@@ -70,6 +70,14 @@ class App extends Component {
       errors.push("王国カードの数が10ではありません");
     }
 
+    Object.entries(kingdom).forEach(kv => {
+      let [name, num] = kv;
+
+      if (num * this.state.numberOfSupplies > kingdomList[name].length) {
+        errors.push(`${name}のカード枚数が足りません`)
+      }
+    })
+
     return errors;
   }
 
