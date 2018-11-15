@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { cardList, eventList, landmarkList } from './cardList.js'
+import { kingdomList, eventList, landmarkList } from './cardList.js'
 
 class App extends Component {
   constructor(props) {

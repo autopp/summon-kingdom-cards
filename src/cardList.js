@@ -1,4 +1,4 @@
-export const cardList = [
+export const kingdomList = [
   {
     name: "basic", cards: [
       { name: "冒険者", bane: false },
