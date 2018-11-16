@@ -66,6 +66,8 @@ class App extends Component {
   validateForGenerate() {
     let errors = [];
     let kingdom = this.state.kingdom;
+    let numberOfSupplies = this.state.numberOfSupplies;
+
     if (Object.values(kingdom).reduce((acc, x) => acc + x) !== 10) {
       errors.push("王国カードの数が10ではありません");
     }
@@ -73,10 +75,18 @@ class App extends Component {
     Object.entries(kingdom).forEach(kv => {
       let [name, num] = kv;
 
-      if (num * this.state.numberOfSupplies > kingdomList[name].length) {
+      if (num * numberOfSupplies > kingdomList[name].length) {
         errors.push(`${name}のカード枚数が足りません`)
       }
     })
+
+    if (this.state.event * numberOfSupplies > eventList.length) {
+      errors.push("イベントの枚数が足りません");
+    }
+
+    if (this.state.landmark * numberOfSupplies > landmarkList.length) {
+      errors.push("ランドマークの枚数が足りません");
+    }
 
     return errors;
   }
