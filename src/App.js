@@ -95,7 +95,7 @@ class App extends Component {
     let errors = '';
     if (this.state.errors.length !== 0) {
       let messages = this.state.errors.map(error => <div>{error}</div>)
-      errors = <div class="alert alert-danger">
+      errors = <div className="alert alert-danger">
         {messages}
       </div>;
     }
@@ -105,8 +105,8 @@ class App extends Component {
       let landscapes = supply.events.concat(supply.landmarks).map(card => card.name).join(' ')
 
       return (
-        <div class="panel panel-default">
-          <div class="panel-body">
+        <div className="panel panel-default">
+          <div className="panel-body">
             <div>{cards}</div>
             <div>{landscapes}</div>
             <div>{bane}</div>
