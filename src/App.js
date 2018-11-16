@@ -93,18 +93,18 @@ class App extends Component {
   render() {
     let errors = '';
     if (this.state.errors.length !== 0) {
-      let messages = this.state.errors.map(error => <div>{error}</div>)
+      let messages = this.state.errors.map((error, i) => <div key={i}>{error}</div>)
       errors = <div className="alert alert-danger">
         {messages}
       </div>;
     }
-    let supplies = this.state.supplies.map(supply => {
+    let supplies = this.state.supplies.map((supply, i) => {
       let cards = Object.keys(supply.kingdom).map(ex => supply.kingdom[ex].map(card => card.name).join(' ')).join(' ');
       let bane = typeof supply.bane === 'object' ? `災い: ${supply.bane.name}` : '';
       let landscapes = supply.events.concat(supply.landmarks).map(card => card.name).join(' ')
 
       return (
-        <div className="panel panel-default">
+        <div className="panel panel-default" key={i}>
           <div className="panel-body">
             <div>{cards}</div>
             <div>{landscapes}</div>
