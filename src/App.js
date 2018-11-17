@@ -57,7 +57,7 @@ class App extends Component {
     // validate state
     let errors = this.validateForGenerate();
     if (errors.length !== 0) {
-      this.setState({errors: errors});
+      this.setState({ errors: errors });
       return;
     }
 
