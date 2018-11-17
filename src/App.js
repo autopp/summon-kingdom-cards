@@ -60,6 +60,9 @@ class App extends Component {
       this.setState({errors: errors});
       return;
     }
+
+    let supplies = this.selectSupplies();
+    this.setState({ supplies: supplies, errors : []});
   }
 
   validateForGenerate() {
@@ -88,6 +91,10 @@ class App extends Component {
     }
 
     return errors;
+  }
+
+  selectSupplies() {
+    return [];
   }
 
   render() {
