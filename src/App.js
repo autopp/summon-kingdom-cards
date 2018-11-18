@@ -266,7 +266,7 @@ class App extends Component {
             <input type="number" value={this.state.event} min="0" max="10" step="1" onChange={this.onChangeEvent} />
           </div>
           <div className="col-lg-1">
-            <div>帝国:</div>
+            <div>ランドマーク:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.landmark} min="0" max="10" step="1" onChange={this.onChangeLandmark} />
