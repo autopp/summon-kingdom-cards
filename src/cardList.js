@@ -338,3 +338,8 @@ export const landmarkList = [
   { name: "壁" },
   { name: "狼の巣" }
 ];
+
+export const nameMap = {
+  basic: "基本", intrigue: "陰謀", seaside: "海辺", alchemy: "錬金術", prosperity: "繁栄", cornucopia: "収穫祭",
+  hinterlands: "異郷", dark_ages: "暗黒時代", guild: "ギルド", adventures: "冒険", empires: "帝国"
+}

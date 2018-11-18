@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { kingdomList, eventList, landmarkList } from './cardList.js'
+import { kingdomList, eventList, landmarkList, nameMap } from './cardList.js'
 
 class App extends Component {
   constructor(props) {
@@ -73,7 +73,7 @@ class App extends Component {
       let [name, num] = kv;
 
       if (num * numberOfSupplies > kingdomList[name].length) {
-        errors.push(`${name}のカード枚数が足りません`)
+        errors.push(`${nameMap[name]}のカード枚数が足りません`)
       }
     })
 
