@@ -61,7 +61,20 @@ class App extends Component {
       return;
     }
 
-    let supplies = this.selectSupplies();
+    let supplies = null;
+    let maxTry = 100;
+
+    for (let i = 0; i < maxTry; i++) {
+      supplies = this.selectSupplies();
+      if (supplies !== null) {
+        break;
+      }
+    }
+
+    if (supplies === null) {
+      this.setState({ errors: ["災いカードの選出に失敗しました"] });
+      return;
+    }
     this.setState({ supplies: supplies, errors : []});
   }
 
@@ -101,6 +114,8 @@ class App extends Component {
       supplies.push({ kingdom: {}, events: [], landmarks: [] });
     }
 
+    let rest = [];
+    let baneNeeded = -1;
     Object.entries(this.state.kingdom).forEach(kv => {
       let [name, num] = kv;
 
@@ -111,8 +126,23 @@ class App extends Component {
       let cards = this.shuffleArray(kingdomList[name]);
       for (let i = 0; i < numberOfSupplies; i++) {
         supplies[i].kingdom[name] = cards.slice(i * num, (i + 1) * num);
+        if (name === "cornucopia" && supplies[i].kingdom[name].find(card => card.name === "魔女娘") !== undefined) {
+          baneNeeded = i;
+        }
       }
+
+      rest.push(...cards.slice(numberOfSupplies * num));
     });
+
+    if (baneNeeded >= 0) {
+      let bane = this.shuffleArray(rest).find(card => card.bane);
+
+      if (bane === undefined) {
+        return null;
+      }
+
+      supplies[baneNeeded].bane = bane;
+    }
 
     let event = this.state.event;
     if (event >= 1) {
