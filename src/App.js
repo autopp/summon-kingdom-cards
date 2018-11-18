@@ -94,7 +94,36 @@ class App extends Component {
   }
 
   selectSupplies() {
-    return [];
+    let supplies = [];
+    let numberOfSupplies = this.state.numberOfSupplies
+
+    for (let i = 0; i < numberOfSupplies; i++) {
+      supplies.push({ kingdom: {}, events: [], landmarks: [] });
+    }
+
+    Object.entries(this.state.kingdom).forEach(kv => {
+      let [name, num] = kv;
+
+      if (num < 1) {
+        return;
+      }
+
+      let cards = this.shuffleArray(kingdomList[name]);
+      for (let i = 0; i < numberOfSupplies; i++) {
+        supplies[i].kingdom[name] = cards.slice(i * num, (i + 1) * num);
+      }
+    });
+
+    return supplies;
+  }
+
+  shuffleArray(ary) {
+    let copied = ary.slice();
+    for (let i = copied.length - 1; i>= 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [copied[i], copied[j]] = [copied[j], copied[i]];
+    }
+    return copied;
   }
 
   render() {
