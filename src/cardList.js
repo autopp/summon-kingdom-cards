@@ -28,7 +28,7 @@ export const kingdomList = {
     { name: "衛兵", bane: false },
     { name: "家臣", bane: true }
   ],
-  "intrigue": [
+  intrigue: [
     { name: "男爵", bane: false },
     { name: "橋", bane: false },
     { name: "共謀者", bane: false },
@@ -55,7 +55,7 @@ export const kingdomList = {
     { name: "改良", bane: false },
     { name: "願いの井戸", bane: true }
   ],
-  "seaside": [
+  seaside: [
     { name: "原住民の村", bane: true },
     { name: "停泊所", bane: true },
     { name: "抑留", bane: true },
@@ -83,7 +83,7 @@ export const kingdomList = {
     { name: "バザー", bane: false },
     { name: "幽霊船", bane: false }
   ],
-  "alchemy": [
+  alchemy: [
     { name: "薬草商", bane: true },
     { name: "薬師", bane: false },
     { name: "大学", bane: false },
@@ -97,7 +97,7 @@ export const kingdomList = {
     { name: "ブドウ園", bane: false },
     { name: "変成", bane: false }
   ],
-  "prosperity": [
+  prosperity: [
     { name: "借金", bane: true },
     { name: "望楼", bane: true },
     { name: "交易路", bane: true },
@@ -124,7 +124,7 @@ export const kingdomList = {
     { name: "銀行", bane: false },
     { name: "行商人", bane: false }
   ],
-  "cornucopia": [
+  cornucopia: [
     { name: "村落", bane: true },
     { name: "占い師", bane: true },
     { name: "移動動物園", bane: true },
@@ -139,7 +139,7 @@ export const kingdomList = {
     { name: "道化師", bane: false },
     { name: "品評会", bane: false }
   ],
-  "hinterlands": [
+  hinterlands: [
     { name: "愚者の黄金", bane: true },
     { name: "岐路", bane: true },
     { name: "公爵夫人", bane: true },
@@ -167,7 +167,7 @@ export const kingdomList = {
     { name: "国境の村", bane: false },
     { name: "農地", bane: false }
   ],
-  "dark_ages": [
+  dark_ages: [
     { name: "救貧院", bane: false },
     { name: "従者", bane: true },
     { name: "物乞い", bane: true },
@@ -204,7 +204,7 @@ export const kingdomList = {
     { name: "狩場", bane: false },
     { name: "祭壇", bane: false }
   ],
-  "guild": [
+  guild: [
     { name: "蝋燭職人", bane: true },
     { name: "医者", bane: true },
     { name: "名品", bane: true },
@@ -219,7 +219,7 @@ export const kingdomList = {
     { name: "石工", bane: true },
     { name: "収税吏", bane: false }
   ],
-  "adventures": [
+  adventures: [
     { name: "法貨", bane: true },
     { name: "農民", bane: true },
     { name: "騎士見習い", bane: true },
@@ -251,7 +251,7 @@ export const kingdomList = {
     { name: "遺物", bane: false },
     { name: "雇人", bane: false }
   ],
-  "empires": [
+  empires: [
     { name: "大君主", bane: false },
     { name: "技術者", bane: false },
     { name: "王室の鍛冶屋", bane: false },
