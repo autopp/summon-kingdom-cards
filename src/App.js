@@ -178,19 +178,19 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>基本:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.kingdom.basic} min="0" max="10" step="1" onChange={this.onChangeKingdom("basic")} />
           </div>
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>陰謀:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.kingdom.intrigue} min="0" max="10" step="1" onChange={this.onChangeKingdom("intrigue")} />
           </div>
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>海辺:</div>
           </div>
           <div className="col-lg-2">
@@ -198,13 +198,13 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>錬金術:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.kingdom.alchemy} min="0" max="10" step="1" onChange={this.onChangeKingdom("alchemy")} />
           </div>
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>繁栄:</div>
           </div>
           <div className="col-lg-2">
@@ -212,13 +212,13 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>収穫祭:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.kingdom.cornucopia} min="0" max="10" step="1" onChange={this.onChangeKingdom("cornucopia")} />
           </div>
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>異郷:</div>
           </div>
           <div className="col-lg-2">
@@ -226,13 +226,13 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>暗黒時代:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.kingdom.dark_ages} min="0" max="10" step="1" onChange={this.onChangeKingdom("dark_ages")} />
           </div>
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>ギルド:</div>
           </div>
           <div className="col-lg-2">
@@ -240,13 +240,13 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>冒険:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.kingdom.adventures} min="0" max="10" step="1" onChange={this.onChangeKingdom("adventures")} />
           </div>
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>帝国:</div>
           </div>
           <div className="col-lg-2">
@@ -259,13 +259,13 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>イベント:</div>
           </div>
           <div className="col-lg-2">
             <input type="number" value={this.state.event} min="0" max="10" step="1" onChange={this.onChangeEvent} />
           </div>
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>ランドマーク:</div>
           </div>
           <div className="col-lg-2">
@@ -278,7 +278,7 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-lg-2">
             <div>数:</div>
           </div>
           <div className="col-lg-2">
