@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfSupplies: 0,
+      numberOfSupplies: 1,
       kingdom: {
         basic: 0, intrigue: 0, seaside: 0, alchemy: 0, prosperity: 0,
         cornucopia: 0, hinterlands: 0, dark_ages: 0, guild: 0, adventures: 0, empires: 0
@@ -282,7 +282,7 @@ class App extends Component {
             <div>数:</div>
           </div>
           <div className="col-lg-2">
-            <input type="number" value={this.state.numberOfSupplies} min="0" max="10" step="1" onChange={this.onChangeNumberOfSupplies} />
+            <input type="number" value={this.state.numberOfSupplies} min="1" max="10" step="1" onChange={this.onChangeNumberOfSupplies} />
           </div>
           <div className="col-lg-2">
             <button type="button" className="btn btn-info btn" onClick={this.onGenerate}>生成</button>
