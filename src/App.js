@@ -114,6 +114,22 @@ class App extends Component {
       }
     });
 
+    let event = this.state.event;
+    if (event >= 1) {
+      let events = this.shuffleArray(eventList);
+      for (let i = 0; i < numberOfSupplies; i++) {
+        supplies[i].events = events.slice(i * event, (i + 1) * event);
+      }
+    }
+
+    let landmark = this.state.landmark;
+    if (landmark >= 1) {
+      let landmarks = this.shuffleArray(landmarkList);
+      for (let i = 0; i < numberOfSupplies; i++) {
+        supplies[i].landmarks = landmarks.slice(i * landmark, (i + 1) * landmark);
+      }
+    }
+
     return supplies;
   }
 
