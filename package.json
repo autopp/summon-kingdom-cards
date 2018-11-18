@@ -1,6 +1,7 @@
 {
   "name": "summon-kingdom-cards",
   "version": "0.1.0",
+  "homepage": "https://autopp.github.io/summon-kingdom-cards",
   "private": true,
   "dependencies": {
     "react": "^16.6.1",
